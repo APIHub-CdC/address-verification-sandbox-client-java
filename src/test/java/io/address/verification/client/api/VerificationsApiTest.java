@@ -26,7 +26,7 @@ public class VerificationsApiTest {
     
     private String xApiKey = "your_api_key";
     
-    private String url = "the_url";
+    private String url = "your_api_key";
     
     @Before()
 	public void setUp() {
@@ -41,8 +41,11 @@ public class VerificationsApiTest {
         
         VerificationRequest body = new VerificationRequest();
         body.setRequestId(UUID.fromString("7c8a0230-36e0-43f4-9b7a-581dc55ea001"));
+        body.setSubscriptionId(UUID.fromString("7c8a0230-36e0-43f4-9b7a-581dc55ea001"));
         body.setServiceCode("CFE");
         body.setContractNumber("000604971C003S38196");
+        body.setAcceptanceDate("2020-04-12T22:20:50.52Z");
+        body.setAcceptance("Y");
         
         Holder holder = new Holder();
         holder.setName("Vlad");
