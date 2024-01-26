@@ -2,7 +2,6 @@ package io.address.verification.client.model;
 
 import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModelProperty;
 
 
 public class Holder {
@@ -18,8 +17,6 @@ public class Holder {
     this.name = name;
     return this;
   }
-   
-  @ApiModelProperty(example = "Vlad", value = "")
   public String getName() {
     return name;
   }
@@ -31,7 +28,6 @@ public class Holder {
     return this;
   }
    
-  @ApiModelProperty(example = "Eddie", value = "")
   public String getSecondName() {
     return secondName;
   }
@@ -43,7 +39,6 @@ public class Holder {
     return this;
   }
    
-  @ApiModelProperty(example = "Teples", value = "")
   public String getLastName() {
     return lastName;
   }
@@ -55,7 +50,6 @@ public class Holder {
     return this;
   }
    
-  @ApiModelProperty(example = "Vlodiling", value = "")
   public String getSecondLastName() {
     return secondLastName;
   }
