@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import java.io.IOException;
 
 
 public class Response {
