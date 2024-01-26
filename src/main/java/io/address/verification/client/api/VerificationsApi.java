@@ -1,8 +1,13 @@
 package io.address.verification.client.api;
 
-import com.google.gson.reflect.TypeToken;
-
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
 
 import io.address.verification.client.ApiCallback;
 import io.address.verification.client.ApiClient;
@@ -12,14 +17,9 @@ import io.address.verification.client.Configuration;
 import io.address.verification.client.Pair;
 import io.address.verification.client.ProgressRequestBody;
 import io.address.verification.client.ProgressResponseBody;
+import io.address.verification.client.model.ResponseVerification;
 import io.address.verification.client.model.VerificationRequest;
 import io.address.verification.client.model.VerificationResponse200;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class VerificationsApi {
     private ApiClient apiClient;
@@ -82,14 +82,14 @@ public class VerificationsApi {
         return call;
     }
     
-    public VerificationResponse200 createVerification(String xApiKey, VerificationRequest body) throws ApiException {
-        ApiResponse<VerificationResponse200> resp = createVerificationWithHttpInfo(xApiKey, body);
+    public ResponseVerification createVerification(String xApiKey, VerificationRequest body) throws ApiException {
+        ApiResponse<ResponseVerification> resp = createVerificationWithHttpInfo(xApiKey, body);
         return resp.getData();
     }
     
-    public ApiResponse<VerificationResponse200> createVerificationWithHttpInfo(String xApiKey, VerificationRequest body) throws ApiException {
+    public ApiResponse<ResponseVerification> createVerificationWithHttpInfo(String xApiKey, VerificationRequest body) throws ApiException {
         okhttp3.Call call = createVerificationValidateBeforeCall(xApiKey, body, null, null);
-        Type localVarReturnType = new TypeToken<VerificationResponse200>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseVerification>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
     
@@ -118,7 +118,7 @@ public class VerificationsApi {
     
     public okhttp3.Call getVerificationByrequestIdCall(String xApiKey, String requestId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        String localVarPath = "/verifications/{requestId}"
+        String localVarPath = "/{requestId}"
             .replaceAll("\\{" + "requestId" + "\\}", apiClient.escapeString(requestId.toString()));
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

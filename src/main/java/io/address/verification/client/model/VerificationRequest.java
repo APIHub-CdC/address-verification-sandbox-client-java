@@ -91,12 +91,11 @@ public class VerificationRequest {
 		this.contractNumber = contractNumber;
 	}
 
-	public VerificationRequest holder(Holder holder) {
-		this.holder = holder;
-		return this;
-	}
-
-	@ApiModelProperty(value = "")
+//	public VerificationRequest holder(Holder holder) {
+//		this.holder = holder;
+//		return this;
+//	}
+	
 	public Holder getHolder() {
 		return holder;
 	}
