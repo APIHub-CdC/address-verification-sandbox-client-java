@@ -15,16 +15,6 @@ public class VerificationResponse200 {
 	private OffsetDateTime dateTime = null;
 	@SerializedName("data")
 	private VerificationResponse200Data data = null;
-	@SerializedName("response")
-	private VerificationResponse200DataResponse response = null;
-
-	public VerificationResponse200DataResponse getResponse() {
-		return response;
-	}
-
-	public void setResponse(VerificationResponse200DataResponse response) {
-		this.response = response;
-	}
 
 	public BigDecimal getCode() {
 		return code;
@@ -67,7 +57,6 @@ public class VerificationResponse200 {
 		sb.append("    message: ").append(toIndentedString(message)).append("\n");
 		sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
 		sb.append("    data: ").append(toIndentedString(data)).append("\n");
-		sb.append("    response: ").append(toIndentedString(response)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
